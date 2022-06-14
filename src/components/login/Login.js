@@ -4,7 +4,7 @@ import * as axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 
-const Login = ({ setLoginUser }) => {
+const Login = ({ updateUser }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
@@ -25,7 +25,7 @@ const Login = ({ setLoginUser }) => {
 
     axios.post("http://localhost:9000/login", user).then((res) => {
       alert(res.data.message);
-      setLoginUser(res.data.user);
+      updateUser(res.data.user);
       navigate("/");
     });
 

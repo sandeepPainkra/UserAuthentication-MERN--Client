@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import "./Homepage.css";
-const Homepage = ({ userData, setLoginUser }) => {
+const Homepage = ({ userData, updateUser }) => {
   return (
     <div className="homepage">
       <div className="container">
@@ -9,7 +9,7 @@ const Homepage = ({ userData, setLoginUser }) => {
         <span>{userData.email}</span>
         <Button
           variant="contained"
-          onClick={() => setLoginUser({})}
+          onClick={() => updateUser({})}
           color="primary"
         >
           Log Out
